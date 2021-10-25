@@ -1,6 +1,7 @@
 import copy
 
 '''
+    https://github.com/Balazshazialex/FLCD_Lab1
     Class SymbolTable - defined as a "hashmap", structured as a list of lists.
     HashFunction  is calculated by summing up the ASCII codes of each char from the string and returning the remainder to the number of small lists in self._map(in  this case chosen as 30)
     Function add will check if a string is in the table already and will return its position if found, otherwise will add it where deeemed fit and return the insert position
@@ -36,8 +37,8 @@ class SymbolTable:
         return self._map[pos[0]][pos[1]]
 
 
-s = SymbolTable()
-print(s.add("a"))
-print(s.add("b"))
-print(s.add("a"))
-print(s.get_string_from_pos((7,0)))
+# s = SymbolTable()
+# print(s.add("a"))
+# print(s.add("b"))
+# print(s.add("a"))
+# print(s.get_string_from_pos((7,0)))
