@@ -26,6 +26,8 @@ class Tokenizer:
                 elif re.findall('([A-Z]+)',elem):
                     poz = vars_table.add(elem)
                     self._PIF += "( 0, " + str(poz) + " )" + '\n'
+                else:
+                    print("Lexical Error: Cannot interpret "+elem)
         f = open("1.txt", 'w')
         f.write(self._PIF)
 
