@@ -37,8 +37,17 @@ class SymbolTable:
         return self._map[pos[0]][pos[1]]
 
 
+    def __str__(self):
+        string_builder=""
+        for elem in self._map:
+          for i in elem:
+              string_builder+=i+"->"+str(self.add(i))+'\n'
+        return string_builder
+
+#
 # s = SymbolTable()
-# print(s.add("a"))
-# print(s.add("b"))
+# s.add("a")
+# s.add("b")
+# print(s)
 # print(s.add("a"))
 # print(s.get_string_from_pos((7,0)))

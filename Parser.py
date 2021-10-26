@@ -16,6 +16,7 @@ class Parser:
             line = line.split()
             self._tokens[line[0].upper()] = line[1]
         self.extract_constants()
+
     def get_splitted(self):
         return self._splitted
 

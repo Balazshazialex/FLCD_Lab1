@@ -24,15 +24,26 @@ class Tokenizer:
                     poz=constants_table.add(elem)
                     self._PIF+= "( 1, "+str(poz) +" )"+'\n'
                 elif re.findall('([A-Z]+)',elem):
-                    poz = vars_table.add(elem)
-                    self._PIF += "( 0, " + str(poz) + " )" + '\n'
+                    if '"' in elem:
+                        print("Lexical Error: Cannot interpret " + elem)
+                    else:
+                        poz = vars_table.add(elem)
+                        self._PIF += "( 0, " + str(poz) + " )" + '\n'
                 else:
                     print("Lexical Error: Cannot interpret "+elem)
-        f = open("1.txt", 'w')
+        f = open("pif.txt", 'w')
         f.write(self._PIF)
+        f.close()
+        f=open("st.out",'w')
+        f.write(str(vars_table))
+        f.close()
+        f = open("ct.out", 'w')
+        f.write(str(constants_table))
+        f.close()
 
 
-f = open('p1.txt', 'r')
+
+f = open('p1err.txt', 'r')
 text = f.read()
 p = Parser(text)
 words = p.get_splitted()
