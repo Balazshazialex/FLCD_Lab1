@@ -25,7 +25,8 @@ class Parser:
         for i in self._splitted:
             elements=re.split('(\".*\"|[0-9]+)',i)
             for e in elements:
-                if not re.findall('\".*\"',e):
+                if not re.findall('\".*\"'
+                                  '',e):
                     e=re.split('(,|\(|\)|]|\[)',e)
                     for elem in e:
                         if elem.split() != []:
